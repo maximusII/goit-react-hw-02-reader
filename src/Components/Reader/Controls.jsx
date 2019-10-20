@@ -1,21 +1,26 @@
-import React, { Component, Fragment } from "react";
-import styles from "./Controls.module.css";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from 'react';
+import styles from './Controls.module.css';
+import PropTypes from 'prop-types';
 
 class Controls extends Component {
   static propTypes = {
-    handlePageNumber: PropTypes.func.isRequired
+    handlePageNumber: PropTypes.func.isRequired,
+    isPrevButtonActive: PropTypes.bool.isRequired,
+    isNextButtonActive: PropTypes.bool.isRequired,
   };
 
   render() {
-    const { handlePageNumber } = this.props;
-
+    const {
+      handlePageNumber,
+      isPrevButtonActive,
+      isNextButtonActive,
+    } = this.props;
     return (
       <Fragment>
         <section className={styles.controls}>
           <button
             type="button"
-            className={styles.button}
+            className={isPrevButtonActive ? styles.button : styles.disabled}
             name="back"
             onClick={handlePageNumber}
           >
@@ -23,7 +28,7 @@ class Controls extends Component {
           </button>
           <button
             type="button"
-            className={styles.button}
+            className={isNextButtonActive ? styles.button : styles.disabled}
             name="forward"
             onClick={handlePageNumber}
           >

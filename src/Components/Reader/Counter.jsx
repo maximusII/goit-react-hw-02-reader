@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from "react";
-import styles from "./Counter.module.css";
-import PropTypes from "prop-types";
+import React, { Component, Fragment } from 'react';
+import styles from './Counter.module.css';
+import PropTypes from 'prop-types';
 
 class Counter extends Component {
   static propTypes = {
     activePageNumber: PropTypes.number.isRequired,
-    lastPageNumber: PropTypes.number.isRequired
+    lastPageNumber: PropTypes.number.isRequired,
   };
 
   render() {
