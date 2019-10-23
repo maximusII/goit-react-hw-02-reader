@@ -15,12 +15,14 @@ class Controls extends Component {
       isPrevButtonActive,
       isNextButtonActive,
     } = this.props;
+
     return (
       <Fragment>
         <section className={styles.controls}>
           <button
             type="button"
             className={isPrevButtonActive ? styles.button : styles.disabled}
+            disabled={!isPrevButtonActive}
             name="back"
             onClick={handlePageNumber}
           >
@@ -29,6 +31,7 @@ class Controls extends Component {
           <button
             type="button"
             className={isNextButtonActive ? styles.button : styles.disabled}
+            disabled={!isNextButtonActive}
             name="forward"
             onClick={handlePageNumber}
           >
